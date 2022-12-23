@@ -26,6 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ePocket.ws.error.ApiError;
 import com.ePocket.ws.shared.ResponseGeneric;
+import com.ePocket.ws.shared.UserCurrent;
 import com.ePocket.ws.user.vm.VMUpdateUser;
 import com.ePocket.ws.user.vm.VMUser;
 import com.fasterxml.jackson.annotation.JsonView;
@@ -94,8 +95,8 @@ public class UserController {
 	}    
 	
 	@GetMapping("/api/1.0/users")	
-	Page<VMUser> getUsers(Pageable page) {		
-		return userService.getUsers(page).map(VMUser::new);
+	Page<VMUser> getUsers(Pageable page, @UserCurrent User user) {		
+		return userService.getUsers(page, user).map(VMUser::new);
 		
 	}
 	

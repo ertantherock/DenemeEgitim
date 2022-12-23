@@ -5,7 +5,7 @@ import com.ePocket.ws.user.User;
 import lombok.Data;
 
 
-@Data	
+@Data
 public class VMUser {
 	
 	
@@ -20,6 +20,6 @@ public class VMUser {
 		this.setUsername(user.getUsername());
 		this.setMail(user.getMail());
 		this.setImage(user.getImage());
-	}
+}
 
 }
